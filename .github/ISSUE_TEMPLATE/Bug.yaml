@@ -1,0 +1,21 @@
+name: Bug Report 🐛
+description: Something not working as expected with Chaos Toolkit? Create a Bug Report here.
+title: "[project]: "
+labels: [bug, needs-triage]
+assignees:
+body:
+  - type: markdown
+    attributes:
+      values: |
+        Something not working as expected with Chaos Toolkit?
+
+        Sorry about that! If you can help us identify what's going wrong, we can do our best to fix it!
+  - type: checkboxes
+    attributes:
+      id: broken-check
+      label: Is this really broken?
+      description: "You may only select one"
+      options:
+        - label: Yes
+        - label: No
+      
