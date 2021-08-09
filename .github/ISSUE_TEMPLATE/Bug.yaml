@@ -3,17 +3,11 @@ description: Something not working as expected with Chaos Toolkit? Create a Bug 
 title: "[project]: "
 labels: [bug, needs-triage]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Something not working as expected with Chaos Toolkit?
-
-        Sorry about that! If you can help us identify what's going wrong, we can do our best to fix it!
-  - type: checkboxes
-    id: broken-check
+  - type: dropdown
     attributes:
       label: Is this really broken?
+      id: dropdown-entry
       description: "You may only select one"
       options:
-        - label: "Yes"
-        - label: "No"
+        - "Yes"
+        - "No"
