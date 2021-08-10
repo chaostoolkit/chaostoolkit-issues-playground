@@ -1,0 +1,57 @@
+name: Labels an Issue based on its title
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  label-issue:
+    permissions:
+      issues: write
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: Naturalclar/issue-action@v2.0.2
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          title-or-body: 'title'
+          parameters: >
+            [
+              {"keywords":["(chaostoolkit/chaostoolkit)","(chaostoolkit)"], "labels": ["chaostoolkit/chaostoolkit"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-addons)","(chaostoolkit-addons)"], "labels": ["chaostoolkit/chaostoolkit-addons"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-bundler)","(chaostoolkit-bundler)"], "labels": ["chaostoolkit/chaostoolkit-bundler"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-documentation)","(chaostoolkit-documentation)"], "labels": ["chaostoolkit/chaostoolkit-documentation"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-documentation-code)","(chaostoolkit-documentation-code)"], "labels": ["chaostoolkit/chaostoolkit-documentation-code"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-extension-template)","(chaostoolkit-extension-template)"], "labels": ["chaostoolkit/chaostoolkit-extension-template"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-kubernetes)","(chaostoolkit-kubernetes)"], "labels": ["chaostoolkit/chaostoolkit-kubernetes"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-lib)","(chaostoolkit-lib)"], "labels": ["chaostoolkit/chaostoolkit-lib"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-reporting)","(chaostoolkit-reporting)"], "labels": ["chaostoolkit/chaostoolkit-reporting"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-samples)","(chaostoolkit-samples)"], "labels": ["chaostoolkit/chaostoolkit-samples"]},
+              {"keywords":["(chaostoolkit/chaostoolkit-tutorials)","(chaostoolkit-tutorials)"], "labels": ["chaostoolkit/chaostoolkit-tutorials"]},
+              {"keywords":["(chaostoolkit/walkthrough)","(walkthrough)"], "labels": ["chaostoolkit/walkthrough"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-aws)","(chaostoolkit-aws)"], "labels": ["chaostoolkit-incubator/chaostoolkit-aws"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-azure)","(chaostoolkit-azure)"], "labels": ["chaostoolkit-incubator/chaostoolkit-azure"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-cloud-foundry)","(chaostoolkit-cloud-foundry)"], "labels": ["chaostoolkit-incubator/chaostoolkit-cloud-foundry"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-dynatrace)","(chaostoolkit-dynatrace)"], "labels": ["chaostoolkit-incubator/chaostoolkit-dynatrace"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-gandi)","(chaostoolkit-gandi)"], "labels": ["chaostoolkit-incubator/chaostoolkit-gandi"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-glooshot)","(chaostoolkit-glooshot)"], "labels": ["chaostoolkit-incubator/chaostoolkit-glooshot"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-google-cloud-platform)","(chaostoolkit-google-cloud-platform)"], "labels": ["chaostoolkit-incubator/chaostoolkit-google-cloud-platform"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-gremlin)","(chaostoolkit-gremlin)"], "labels": ["chaostoolkit-incubator/chaostoolkit-gremlin"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-humio)","(chaostoolkit-humio)"], "labels": ["chaostoolkit-incubator/chaostoolkit-humio"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-instana)","(chaostoolkit-instana)"], "labels": ["chaostoolkit-incubator/chaostoolkit-instana"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-istio)","(chaostoolkit-istio)"], "labels": ["chaostoolkit-incubator/chaostoolkit-istio"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-oci)","(chaostoolkit-oci)"], "labels": ["chaostoolkit-incubator/chaostoolkit-oci"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-openstack)","(chaostoolkit-openstack)"], "labels": ["chaostoolkit-incubator/chaostoolkit-openstack"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-opentracing)","(chaostoolkit-opentracing)"], "labels": ["chaostoolkit-incubator/chaostoolkit-opentracing"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-prometheus)","(chaostoolkit-prometheus)"], "labels": ["chaostoolkit-incubator/chaostoolkit-prometheus"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-reliably)","(chaostoolkit-reliably)"], "labels": ["chaostoolkit-incubator/chaostoolkit-reliably"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-saltstack)","(chaostoolkit-saltstack)"], "labels": ["chaostoolkit-incubator/chaostoolkit-saltstack"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-service-fabric)","(chaostoolkit-service-fabric)"], "labels": ["chaostoolkit-incubator/chaostoolkit-service-fabric"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-slack)","(chaostoolkit-slack)"], "labels": ["chaostoolkit-incubator/chaostoolkit-slack"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-spring)","(chaostoolkit-spring)"], "labels": ["chaostoolkit-incubator/chaostoolkit-spring"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-toxiproxy)","(chaostoolkit-toxiproxy)"], "labels": ["chaostoolkit-incubator/chaostoolkit-toxiproxy"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-vmware)","(chaostoolkit-vmware)"], "labels": ["chaostoolkit-incubator/chaostoolkit-vmware"]},
+              {"keywords":["(chaostoolkit-incubator/chaostoolkit-wiremock)","(chaostoolkit-wiremock)"], "labels": ["chaostoolkit-incubator/chaostoolkit-wiremock"]},
+              {"keywords":["(chaostoolkit-incubator/community-playground)","(community-playground)"], "labels": ["chaostoolkit-incubator/community-playground"]},
+              {"keywords":["(chaostoolkit-incubator/kubernetes-crd)","(kubernetes-crd)"], "labels": ["chaostoolkit-incubator/kubernetes-crd"]},
+              {"keywords":["(chaostoolkit-incubator/kubernetes-job)","(kubernetes-job)"], "labels": ["chaostoolkit-incubator/kubernetes-job"]},
+              {"keywords":["(chaostoolkit-incubator/terraform-chaostoolkit)","(terraform-chaostoolkit)"], "labels": ["chaostoolkit-incubator/terraform-chaostoolkit"]}
+            ]
