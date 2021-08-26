@@ -35,7 +35,7 @@ jobs:
           exit 0
       - name: Comment on PR
         if: ${{ steps.modified.outputs.MODIFIED }} == "FALSE"
-        uses: JoseThen/comment-pr@v1
+        uses: JoseThen/comment-pr@v1.1.0
         with:
           comment: |
             We've noticed your Pull Request did not modify any tests :mag:
