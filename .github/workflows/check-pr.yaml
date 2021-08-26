@@ -33,11 +33,14 @@ jobs:
           done
           echo "::set-output name=MODIFIED::FALSE" # Tests were not modified
           exit 0
-      - name: Comment on PR
-        if: ${{ steps.modified.outputs.MODIFIED }} == FALSE
-        uses: JoseThen/comment-pr@v1.1.0
-        with:
-          comment: |
-            We've noticed your Pull Request did not modify any tests :mag:
-            If your change requires tests, please add them :smile:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Modified?
+        run: |
+          echo ${{ steps.modified.outputs.MODIFIED }}
+      # - name: Comment on PR
+      #   if: ${{ steps.modified.outputs.MODIFIED }} == FALSE
+      #   uses: JoseThen/comment-pr@v1.1.0
+      #   with:
+      #     comment: |
+      #       We've noticed your Pull Request did not modify any tests :mag:
+      #       If your change requires tests, please add them :smile:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
