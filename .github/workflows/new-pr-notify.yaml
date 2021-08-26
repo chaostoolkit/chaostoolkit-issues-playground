@@ -1,0 +1,18 @@
+name: Notify for new PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  notify-maintainers:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Notify @chaostoolkit/maintainers
+        uses: derekprior/add-autoresponse@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          respondableId: ${{ github.event.issue.node_id }}
+          response: "Hey @chaostoolkit/maintainers - Someone just raised this PR! :construction_worker:"
+          author: ${{ github.event.issue.user.login }}
