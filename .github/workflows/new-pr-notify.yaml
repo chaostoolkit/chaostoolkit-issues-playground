@@ -13,5 +13,6 @@ jobs:
         with:
           comment: |
             Hey @chaostoolkit/maintainers
+
             Someone just raised this PR! :construction_worker:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
