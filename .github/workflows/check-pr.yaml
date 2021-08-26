@@ -39,7 +39,7 @@ jobs:
       - name: Hi
         run: |
           echo "things were modified"
-        if: ${{ steps.modified.outputs.MODIFIED }} == "TRUE"
+        if: ${{ steps.modified.outputs.MODIFIED == TRUE }}
       # - name: Comment on PR
       #   if: ${{ steps.modified.outputs.MODIFIED }} == FALSE
       #   uses: JoseThen/comment-pr@v1.1.0
