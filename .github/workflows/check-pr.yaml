@@ -34,7 +34,7 @@ jobs:
           echo "::set-output name=MODIFIED::FALSE" # Tests were not modified
           exit 0
       - name: Comment on PR
-        if: ${{ steps.modified.outputs.MODIFIED }} == "FALSE"
+        if: ${{ steps.modified.outputs.MODIFIED }} == FALSE
         uses: JoseThen/comment-pr@v1.1.0
         with:
           comment: |
