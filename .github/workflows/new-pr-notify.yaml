@@ -9,10 +9,8 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Notify @chaostoolkit/maintainers
-        uses: derekprior/add-autoresponse@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: JoseThen/comment-pr@v1.1.0
         with:
-          respondableId: ${{ github.event.pull_request.node_id }}
-          response: "Hey @chaostoolkit/maintainers - Someone just raised this PR! :construction_worker:"
-          author: ${{ github.event.pull_request.user.login }}
+          comment: |
+            Hey @chaostoolkit/maintainers - Someone just raised this PR! :construction_worker:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
