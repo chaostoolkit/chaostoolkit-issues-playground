@@ -25,7 +25,7 @@ jobs:
         id: modified
         run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
-            if [[ ${changed_file} =~ ^tests\/.*test_.*.py$ ]];
+            if [[ ${changed_file} =~ ^tests\/.*test_.*\.py$ ]];
             then
               echo "::set-output name=MODIFIED::TRUE"; # Tests were modified
               exit 0
