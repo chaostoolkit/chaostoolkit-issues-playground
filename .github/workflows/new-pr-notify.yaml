@@ -12,6 +12,6 @@ jobs:
         uses: JoseThen/comment-pr@v1.1.0
         with:
           comment: |
-            Hey @chaostoolkit/maintainers
+            Hey @maintainers
             Someone just raised this PR! :construction_worker:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
